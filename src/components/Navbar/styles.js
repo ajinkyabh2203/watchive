@@ -3,7 +3,11 @@ import {
   AppBar as MuiAppBar,
   Toolbar as MuiToolbar,
   IconButton as MuiIconButton,
+  Drawer as MuiDrawer,
+  Button,
 } from "@mui/material";
+
+const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar)({
   position: "fixed",
@@ -27,8 +31,32 @@ const MenuButton = styled(MuiIconButton)(({ theme }) => ({
   },
 }));
 
+const Nav = styled("nav")(({ theme }) => ({
+  [theme.breakpoints.up("sm")]: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+}));
+
+const Drawer = styled(MuiDrawer)({
+  width: drawerWidth,
+  "& .MuiPaper-root": {
+    width: drawerWidth,
+  },
+});
+
+const LinkButton = styled(Button)({
+  "&:hover": {
+    color: "white !important",
+    textDecoration: "none",
+  },
+});
+
 export const styles = {
   AppBar,
   Toolbar,
   MenuButton,
+  Nav,
+  Drawer,
+  LinkButton,
 };
