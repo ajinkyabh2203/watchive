@@ -10,7 +10,7 @@ const App = () => {
   return (
     <RootContainer>
       <CssBaseline />
-      <Navbar />
+      <Navbar />                              
       <Content>
         <Toolbar />
         <Routes>
