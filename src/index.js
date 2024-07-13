@@ -1,20 +1,26 @@
 import React from "react";
-// import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom"
 
+// import from dependencies/ packages
 import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { Provider } from "react-redux";
 
+// import from files
 import App from "./components/App";
-
-const theme = createTheme({});
+import store from "./app/store";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
+const theme = createTheme({});
+
 root.render(
-  <ThemeProvider theme={theme}>
-    <Router>
-      <App />
-    </Router>
-  </ThemeProvider>
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <App />
+      </Router>
+    </ThemeProvider>
+  </Provider>
 );
