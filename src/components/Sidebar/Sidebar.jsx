@@ -41,11 +41,13 @@ const redLogo =
 // #CADCFC : use lighter version of this color for website background in light mode
 
 const Sidebar = ({ setMobileOpen }) => {
+  const { genreIdOrCategoryName } = useSelector(
+    (state) => state.currentGenreOrCategory
+  );
   const theme = useTheme();
   const { Link, Image, ItemLink, GenreImage } = styles;
   const { data, isFetching } = useGetGenresQuery();
   const dispatch = useDispatch();
-  console.log(data);
 
   return (
     <>
@@ -62,7 +64,6 @@ const Sidebar = ({ setMobileOpen }) => {
           <ItemLink key={value} to="/">
             <ListItemButton
               onClick={() => dispatch(selectGenreOrCategory(value))}
-              button
             >
               <ListItemIcon>
                 <GenreImage src={genreIcons[label.toLowerCase()]} height={30} />
@@ -84,7 +85,6 @@ const Sidebar = ({ setMobileOpen }) => {
             <ItemLink key={name} to="/">
               <ListItemButton
                 onClick={() => dispatch(selectGenreOrCategory(id))}
-                button
               >
                 <ListItemIcon>
                   <GenreImage
