@@ -27,11 +27,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { styles } from "./styles";
 import { useGetMovieQuery } from "../../services/TMDB";
+import genreIcons from "../../assets/genres";
 
 const MovieInfo = () => {
   const { id } = useParams();
   const { data, isFetching, error } = useGetMovieQuery(id);
-  const { Grid1, Poster } = styles;
+  const { Grid1, Poster, GenresContainer, GenresImages, Links } = styles;
 
   if (isFetching) {
     return (
@@ -48,15 +49,55 @@ const MovieInfo = () => {
       </Box>
     );
   }
+  console.log(data);
 
   return (
     <Grid1 container>
-      <Grid1 item sm={12} lg={4} align="center">
+      <Grid item sm={12} lg={4} align="center">
         <Poster
           src={`http://image.tmdb.org/t/p/w500/${data?.poster_path}`}
           alt={data?.title}
         />
-      </Grid1>
+      </Grid>
+      <Grid item container direction="column" lg={7}>
+        <Typography variant="h3" align="center" gutterBottom>
+          {data?.title} ({data.release_date.split("-")[0]})
+        </Typography>
+        <Typography variant="h5" align="center" gutterBottom>
+          {data?.tagline}{" "}
+        </Typography>
+        <Grid1 item>
+          <Box display="flex" align="center">
+            <Rating readOnly value={data.vote_average / 2} />
+            <Typography
+              variant="subtitle1"
+              gutterBottom
+              style={{ marginLeft: "10px" }}
+            >
+              {data?.vote_average}/10
+            </Typography>
+          </Box>
+          <Typography variant="h6" align="center" gutterBottom>
+            {data?.runtime}min
+            {data?.spoken_languages.length > 0
+              ? `/${data?.spoken_languages[0].name}`
+              : " "}
+          </Typography>
+        </Grid1>
+        <GenresContainer item>
+          {data?.genres?.map((genre, i) => (
+            <Links key={genre.name} to="/" onClick={() => {}}>
+              <GenresImages
+                src={genreIcons[genre.name.toLowerCase()]}
+                height={30}
+              />
+              <Typography color="textPrimary" variant="subtitle1">
+                {genre?.name}
+              </Typography>
+            </Links>
+          ))}
+        </GenresContainer>
+      </Grid>
     </Grid1>
   );
 };

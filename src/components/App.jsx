@@ -10,12 +10,12 @@ const App = () => {
   return (
     <RootContainer>
       <CssBaseline />
-      <Navbar />                              
+      <Navbar />
       <Content>
         <Toolbar />
         <Routes>
           <Route path="/" element={<Movies />} />
-          <Route path="/movieinfo/:id" element={<MovieInfo />} />
+          <Route path="/movie/:id" element={<MovieInfo />} />
           <Route path="/artists/:id" element={<Artists />} />
           <Route path="/profile/:id" element={<Profile />} />
         </Routes>

@@ -10,7 +10,6 @@ import {
   CircularProgress,
   ListItemButton,
 } from "@mui/material";
-import { Link } from "react-router-dom";
 import { useTheme } from "@mui/system";
 import { styles } from "./styles";
 import { useGetGenresQuery } from "../../services/TMDB";
