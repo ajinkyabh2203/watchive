@@ -1,5 +1,6 @@
 import { margin, styled } from "@mui/system";
 import { Grid as muiGrid } from "@mui/material";
+import { Modal as muiModal } from "@mui/material";
 import { Link as muiLink } from "react-router-dom";
 
 const Grid1 = styled(muiGrid)(({ theme }) => ({
@@ -45,8 +46,51 @@ const Links = styled(muiLink)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  textDecoration: "none",
   [theme.breakpoints.down("sm")]: {
     padding: "0.5rem 1rem",
+  },
+}));
+
+const CastImage = styled("img")(({ theme }) => ({
+  width: "100%",
+  maxWidth: "7em",
+  height: "8em",
+  objectFit: "cover",
+  borderRadius: "10px",
+}));
+
+const ButtonsContainer = styled(muiGrid)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  width: "100%",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+  },
+}));
+
+const ButtonsContainerGrid = styled(muiGrid)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  width: "100%",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+  },
+}));
+
+const Modal = styled(muiModal)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
+const Video = styled("iframe")(({ theme }) => ({
+  width: "50%",
+  height: "50%",
+  border: 0,
+  [theme.breakpoints.down("sm")]: {
+    width: "90%",
+    height: "90%",
   },
 }));
 
@@ -56,4 +100,9 @@ export const styles = {
   GenresContainer,
   GenresImages,
   Links,
+  CastImage,
+  ButtonsContainer,
+  ButtonsContainerGrid,
+  Modal,
+  Video,
 };
