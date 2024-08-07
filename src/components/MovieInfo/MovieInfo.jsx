@@ -141,11 +141,11 @@ const MovieInfo = () => {
           {data?.overview}
         </Typography>
         <Typography variant="h5" gutterBottom>
-          To Cast
+          Cast
         </Typography>
         <Grid item container spacing={2}>
           {data &&
-            data.credits?.cast
+            data?.credits?.cast
               ?.map(
                 (character, i) =>
                   character.profile_path && (
@@ -155,7 +155,7 @@ const MovieInfo = () => {
                       xs={4}
                       md={2}
                       component={Link}
-                      to={`/actors/${character.id}`}
+                      to={`/artists/${character.id}`}
                       style={{ textDecoration: "none" }}
                     >
                       <CastImage
