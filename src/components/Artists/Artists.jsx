@@ -7,13 +7,13 @@ import {
   useGetMoviesByArtistIdQuery,
 } from "../../services/TMDB";
 import { styles } from "./styles";
-import { MovieList } from "..";
+import { MovieList, Pagination } from "..";
 
 const Artists = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { Image } = styles;
-  const page = 1;
+  const [page, setPage] = useState(1);
   const { data, isFetching, error } = useGetArtistsDetailsQuery(id);
   const { data: movies } = useGetMoviesByArtistIdQuery({ id, page });
   if (isFetching) {
@@ -88,6 +88,11 @@ const Artists = () => {
           Movies
         </Typography>
         {movies && <MovieList movies={movies} numberOfMovies={12} />}
+        <Pagination
+          currentPage={page}
+          setPage={setPage}
+          totalPages={movies?.total_pages}
+        />
       </Box>
     </>
   );
