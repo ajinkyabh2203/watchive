@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  Modal,
   Typography,
   Button,
   ButtonRoot,
@@ -295,13 +294,15 @@ const MovieInfo = () => {
         )}
       </Box>
       <Modal closeAfterTransition open={!!open} onClose={() => setOpen(false)}>
-        {data?.videos?.results?.length > 0 && (
+        {data?.videos?.results?.length > 0 ? (
           <Video
             autoPlay
             title="Trailer"
             src={`https://www.youtube.com/embed/${data?.videos?.results[0]?.key}`}
             allow="autoplay"
           />
+        ) : (
+          <></> // Empty React fragment to ensure a valid child is always passed
         )}
       </Modal>
     </Grid1>

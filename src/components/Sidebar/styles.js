@@ -28,7 +28,7 @@ const ItemLink = styled(muiLink)(({ theme }) => ({
 }));
 
 const GenreImage = styled("img")(({ theme }) => ({
-  filter: theme.palette.mode === "dark" ? "dark" : "invert(0)",
+  filter: theme.palette.mode === "dark" && "invert(1)",
 }));
 
 export const styles = {
