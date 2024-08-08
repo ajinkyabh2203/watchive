@@ -1,22 +1,11 @@
 import { styled } from "@mui/system";
 import { Link as muiLink } from "react-router-dom";
 
-import {
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  ListSubheader,
-  ListItemIcon,
-  Box,
-  CircularProgress,
-} from "@mui/material";
-
-const Link = styled(muiLink)(({ theme }) => ({
+const Link = styled(muiLink)({
   display: "flex",
   justifyContent: "center",
   padding: "10% 0",
-}));
+});
 
 const Image = styled("img")({
   width: "70%",

@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import {
   Typography,
   Button,
-  ButtonRoot,
   Grid,
   Box,
   CircularProgress,
-  useMediaQuery,
   Rating,
   ButtonGroup,
 } from "@mui/material";
@@ -17,7 +15,6 @@ import {
   Language,
   PlusOne,
   Favorite,
-  FavoriteBorderOutlines,
   Remove,
   ArrowBack,
   FavoriteBorderOutlined,

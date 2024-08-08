@@ -10,7 +10,7 @@ const Container = styled("div")({
 const Button = styled(muiButton)(({ theme }) => ({
   margin: "30px 2px",
   backgroundColor: theme.palette.mode === "light" ? "#001F6B" : "#272727",
-  color: "white", // Ensure the text color is white
+  color: "white",
 }));
 
 const PageNumber = styled(Typography)(({ theme }) => ({

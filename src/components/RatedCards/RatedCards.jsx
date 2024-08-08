@@ -1,10 +1,8 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
 import { Movie } from "..";
-// import { styles } from "./styles";
 
 const RatedCards = ({ title, data }) => {
-  // const { Container } = styles;
   return (
     <div>
       <Box>

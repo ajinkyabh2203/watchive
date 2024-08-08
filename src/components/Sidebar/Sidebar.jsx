@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import {
   Divider,
   List,
-  ListItem,
   ListItemText,
   ListSubheader,
   ListItemIcon,
@@ -36,8 +35,6 @@ const blueLogo =
   "https://fontmeme.com/permalink/240712/b44272d227a12e343f60ec9843576c83.png";
 const redLogo =
   "https://fontmeme.com/permalink/240712/8ed390a239de5863191991c591747799.png";
-
-// #CADCFC : use lighter version of this color for website background in light mode
 
 const Sidebar = ({ setMobileOpen }) => {
   const { genreIdOrCategoryName } = useSelector(

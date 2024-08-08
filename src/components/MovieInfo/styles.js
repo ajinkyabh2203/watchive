@@ -1,4 +1,4 @@
-import { margin, styled } from "@mui/system";
+import { styled } from "@mui/system";
 import { Grid as muiGrid } from "@mui/material";
 import { Modal as muiModal } from "@mui/material";
 import { Link as muiLink } from "react-router-dom";
@@ -52,13 +52,13 @@ const Links = styled(muiLink)(({ theme }) => ({
   },
 }));
 
-const CastImage = styled("img")(({ theme }) => ({
+const CastImage = styled("img")({
   width: "100%",
   maxWidth: "7em",
   height: "8em",
   objectFit: "cover",
   borderRadius: "10px",
-}));
+});
 
 const ButtonsContainer = styled(muiGrid)(({ theme }) => ({
   display: "flex",
@@ -78,11 +78,11 @@ const ButtonsContainerGrid = styled(muiGrid)(({ theme }) => ({
   },
 }));
 
-const Modal = styled(muiModal)(({ theme }) => ({
+const Modal = styled(muiModal)({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-}));
+});
 
 const Video = styled("iframe")(({ theme }) => ({
   width: "50%",

@@ -1,7 +1,6 @@
 import { styled } from "@mui/material/styles";
 import { Link as domlink } from "react-router-dom";
 import { Grid as muiGrid, Typography as muiTypo } from "@mui/material";
-import { display } from "@mui/system";
 
 const Grid = styled(muiGrid)({
   padding: "10px",

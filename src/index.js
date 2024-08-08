@@ -1,5 +1,4 @@
 import React from "react";
-// import ReactDOM from "react-dom"
 
 // import from dependencies/ packages
 import { createRoot } from "react-dom/client";
@@ -8,6 +7,7 @@ import { Provider } from "react-redux";
 import "./index.css";
 
 import ToggleColorModeProvider from "./utils/ToggleColorMode";
+
 // import from files
 import App from "./components/App";
 import store from "./app/store";
