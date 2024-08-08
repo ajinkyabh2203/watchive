@@ -9,9 +9,10 @@ import {
 
 const drawerWidth = 240;
 
-const AppBar = styled(MuiAppBar)({
+const AppBar = styled(MuiAppBar)(({ theme }) => ({
   position: "fixed",
-});
+  backgroundColor: theme.palette.mode === "light" ? "#001F6B" : "#272727",
+}));
 
 const Toolbar = styled(MuiToolbar)(({ theme }) => ({
   height: "80px",
@@ -22,6 +23,7 @@ const Toolbar = styled(MuiToolbar)(({ theme }) => ({
     marginLeft: 0,
     flexWrap: "wrap",
   },
+  backgroundColor: theme.palette.mode === "light" ? "#001F6B" : "#272727",
 }));
 
 const MenuButton = styled(MuiIconButton)(({ theme }) => ({
@@ -29,6 +31,7 @@ const MenuButton = styled(MuiIconButton)(({ theme }) => ({
   [theme.breakpoints.up("sm")]: {
     display: "none",
   },
+  backgroundColor: theme.palette.mode === "light" ? "#001F6B" : "#272727",
 }));
 
 const Nav = styled("nav")(({ theme }) => ({
@@ -36,21 +39,24 @@ const Nav = styled("nav")(({ theme }) => ({
     width: drawerWidth,
     flexShrink: 0,
   },
+  backgroundColor: theme.palette.mode === "light" ? "#001F6B" : "#272727",
 }));
 
-const Drawer = styled(MuiDrawer)({
+const Drawer = styled(MuiDrawer)(({ theme }) => ({
   width: drawerWidth,
+  backgroundColor: theme.palette.mode === "light" ? "#001F6B" : "#272727",
   "& .MuiPaper-root": {
     width: drawerWidth,
   },
-});
+}));
 
-const LinkButton = styled(Button)({
+const LinkButton = styled(Button)(({ theme }) => ({
   "&:hover": {
     color: "white !important",
     textDecoration: "none",
+    backgroundColor: theme.palette.mode === "light" ? "#001F6B" : "#272727",
   },
-});
+}));
 
 export const styles = {
   AppBar,

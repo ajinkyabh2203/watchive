@@ -11,11 +11,10 @@ const Search = () => {
   const [query, setquery] = useState("");
   const dispatch = useDispatch();
   const location = useLocation();
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
       dispatch(searchMovie(query));
     }
-    console.log("Search");
   };
 
   if (location.pathname !== "/") return null;
@@ -23,7 +22,7 @@ const Search = () => {
   return (
     <SearchContainer>
       <TextField
-        onKeyPress={handleKeyPress}
+        onKeyDown={handleKeyDown}
         value={query}
         onChange={(e) => setquery(e.target.value)}
         variant="standard"

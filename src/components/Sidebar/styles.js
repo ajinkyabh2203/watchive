@@ -12,11 +12,11 @@ import {
   CircularProgress,
 } from "@mui/material";
 
-const Link = styled(muiLink)({
+const Link = styled(muiLink)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   padding: "10% 0",
-});
+}));
 
 const Image = styled("img")({
   width: "70%",

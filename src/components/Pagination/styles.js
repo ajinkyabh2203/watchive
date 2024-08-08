@@ -1,4 +1,4 @@
-import { styled } from "@mui/material/styles";
+import { styled } from "@mui/system";
 import { Button as muiButton, Typography } from "@mui/material";
 
 const Container = styled("div")({
@@ -7,9 +7,11 @@ const Container = styled("div")({
   alignItems: "center",
 });
 
-const Button = styled(muiButton)({
+const Button = styled(muiButton)(({ theme }) => ({
   margin: "30px 2px",
-});
+  backgroundColor: theme.palette.mode === "light" ? "#001F6B" : "#272727",
+  color: "white", // Ensure the text color is white
+}));
 
 const PageNumber = styled(Typography)(({ theme }) => ({
   margin: "0 20px !important",

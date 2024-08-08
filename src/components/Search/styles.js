@@ -1,5 +1,4 @@
 import { styled } from "@mui/material/styles";
-import { display } from "@mui/system";
 
 const SearchContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
@@ -10,7 +9,7 @@ const SearchContainer = styled("div")(({ theme }) => ({
 }));
 
 const customInputStyles = (theme) => ({
-  color: theme.palette.mode === "light" && "black",
+  color: theme.palette.mode === "#ffffff",
   filter: theme.palette.mode === "light" && "Invert(1)",
   [theme.breakpoints.down("sm")]: {
     marginTop: "-10px",
