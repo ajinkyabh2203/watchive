@@ -14,9 +14,10 @@ const App = () => {
       <Content>
         <Toolbar />
         <Routes>
-          <Route path="/" element={<Movies />} />
           <Route path="/movie/:id" element={<MovieInfo />} />
           <Route path="/artists/:id" element={<Artists />} />
+          <Route path="/" element={<Movies />} />
+          <Route path="/approved" element={<Movies />} />
           <Route path="/profile/:id" element={<Profile />} />
         </Routes>
       </Content>

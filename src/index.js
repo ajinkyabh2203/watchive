@@ -6,6 +6,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Provider } from "react-redux";
+import "./index.css";
 
 // import from files
 import App from "./components/App";

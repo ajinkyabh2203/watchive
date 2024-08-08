@@ -10,12 +10,15 @@ const Search = () => {
   const { SearchContainer, customInputStyles } = styles;
   const [query, setquery] = useState("");
   const dispatch = useDispatch();
+  const location = useLocation();
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       dispatch(searchMovie(query));
     }
     console.log("Search");
   };
+
+  if (location.pathname !== "/") return null;
 
   return (
     <SearchContainer>
