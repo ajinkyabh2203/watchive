@@ -5,12 +5,12 @@ const Pagination = ({ currentPage, totalPages, setPage }) => {
   const { Container, Button, PageNumber } = styles;
 
   const handlePrev = () => {
-    if (currentPage != 1) {
+    if (currentPage !== 1) {
       setPage((prevPage) => prevPage - 1);
     }
   };
   const handleNext = () => {
-    if (currentPage != totalPages) {
+    if (currentPage !== totalPages) {
       setPage((prevPage) => prevPage + 1);
     }
   };
