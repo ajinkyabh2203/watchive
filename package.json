@@ -1,8 +1,8 @@
 {
-  "homepage": "https://<Username>.github.io/<Repository-name>",
   "name": "watchive",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ajinkyabh2203.github.io/watchive",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
