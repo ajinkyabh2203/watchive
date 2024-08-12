@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/watchive/static/css/main.6d4e09db.css",
+    "main.js": "/watchive/static/js/main.70ee7ca9.js",
+    "index.html": "/watchive/index.html",
+    "main.6d4e09db.css.map": "/watchive/static/css/main.6d4e09db.css.map",
+    "main.70ee7ca9.js.map": "/watchive/static/js/main.70ee7ca9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d4e09db.css",
+    "static/js/main.70ee7ca9.js"
+  ]
+}
