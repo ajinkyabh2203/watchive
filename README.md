@@ -33,7 +33,7 @@ Experience Watchive live at: [watchive.netlify.app](https://watchive.netlify.app
 
 ## Contributing 🤝
 
-We welcome contributions! Please fork the repository and submit a pull request with your changes. For bug reports or feature requests, open an issue on the [GitHub Issues](https://github.com/ajinkyabh2203/watchive/issues) page.
+Contributions are always welcome! Please fork the repository and submit a pull request with your changes. For bug reports or feature requests, open an issue on the [GitHub Issues](https://github.com/ajinkyabh2203/watchive/issues) page.
 
 ## License 📜
 
