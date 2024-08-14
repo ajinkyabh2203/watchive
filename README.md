@@ -1,7 +1,11 @@
 # Watchive 🎥🌟 - **Your ultimate movie exploration hub.**
 
 
-https://github.com/user-attachments/assets/61130687-4a40-46b4-8ea0-9ccbc62a2a58
+
+
+https://github.com/user-attachments/assets/f213bc06-061b-4530-9c8d-a6b20cb311c0
+
+
 
 
 **Watchive is an innovative web application designed to help you explore movies effortlessly. Navigate through various genres, get detailed movie information, and discover new favorites with personalized recommendations.**
