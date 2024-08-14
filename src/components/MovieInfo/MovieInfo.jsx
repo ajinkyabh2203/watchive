@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Typography,
   Button,
@@ -13,21 +13,14 @@ import {
   Movie as MovieIcon,
   Theaters,
   Language,
-  PlusOne,
-  Favorite,
-  Remove,
   ArrowBack,
-  FavoriteBorderOutlined,
 } from "@mui/icons-material";
 
 import { Link, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-import { userSelector } from "../../features/auth";
+import { useDispatch } from "react-redux";
 
 import { styles } from "./styles";
 import {
-  useGetListQuery,
   useGetMovieQuery,
   useGetRecommendationsQuery,
 } from "../../services/TMDB";
@@ -37,22 +30,10 @@ import MovieList from "../MovieList/MovieList";
 import { selectGenreOrCategory } from "../../features/currentGenre";
 
 const MovieInfo = () => {
-  const { user } = useSelector(userSelector);
   const { id } = useParams();
   const dispatch = useDispatch();
   const { data, isFetching, error } = useGetMovieQuery(id);
-  const { data: favoriteMovies } = useGetListQuery({
-    listName: "favorite/movies",
-    accountId: user.id,
-    sessionId: localStorage.getItem("session_id"),
-    page: 1,
-  });
-  const { data: watchlistMovies } = useGetListQuery({
-    listName: "watchlist/movies",
-    accountId: user.id,
-    sessionId: localStorage.getItem("session_id"),
-    page: 1,
-  });
+
   const { data: recommendations, isFetching: isRecommendationsFetching } =
     useGetRecommendationsQuery({
       list: "/recommendations",
@@ -71,40 +52,6 @@ const MovieInfo = () => {
     Video,
   } = styles;
   const [open, setOpen] = useState(false);
-
-  const [isMovieFavorited, setIsMovieFavorited] = useState(false);
-  const [isMovieWatchlisted, setIsMovieWatchlisted] = useState(false);
-
-  useEffect(() => {
-    setIsMovieFavorited(
-      !!favoriteMovies?.results?.find((movie) => movie?.id === data?.id)
-    );
-  }, [favoriteMovies, data]);
-  useEffect(() => {
-    setIsMovieWatchlisted(
-      !!watchlistMovies?.results?.find((movie) => movie?.id === data?.id)
-    );
-  }, [watchlistMovies, data]);
-
-  const addToFavorites = async () => {
-    await axios.post(
-      `https://api.themoviedb.org/3/account/${user.id}/favorite?api_key=${
-        process.env.REACT_APP_TMDB_KEY
-      }&session_id=${localStorage.getItem("session_id")}`,
-      { media_type: "movie", media_id: id, favorite: !isMovieFavorited }
-    );
-    setIsMovieFavorited((prev) => !prev);
-  };
-
-  const addToWatchlist = async () => {
-    await axios.post(
-      `https://api.themoviedb.org/3/account/${user.id}/watchlist?api_key=${
-        process.env.REACT_APP_TMDB_KEY
-      }&session_id=${localStorage.getItem("session_id")}`,
-      { media_type: "movie", media_id: id, watchlist: !isMovieWatchlisted }
-    );
-    setIsMovieWatchlisted((prev) => !prev);
-  };
 
   console.log(recommendations);
 
@@ -244,23 +191,6 @@ const MovieInfo = () => {
                 >
                   Trailer
                 </Button>
-              </ButtonGroup>
-              <ButtonGroup>
-                <Button
-                  onClick={addToFavorites}
-                  endIcon={
-                    isMovieFavorited ? <FavoriteBorderOutlined /> : <Favorite />
-                  }
-                >
-                  {isMovieFavorited ? "Unfavorite" : "Favorite"}
-                </Button>
-                <Button
-                  onClick={addToWatchlist}
-                  endIcon={isMovieWatchlisted ? <Remove /> : <PlusOne />}
-                >
-                  Watchlist
-                </Button>
-
                 <Button
                   endIcon={<ArrowBack />}
                   sx={{ borderColor: "primary.main" }}

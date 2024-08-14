@@ -4,7 +4,6 @@ import {
   Toolbar as MuiToolbar,
   IconButton as MuiIconButton,
   Drawer as MuiDrawer,
-  Button,
 } from "@mui/material";
 
 const drawerWidth = 240;
@@ -50,19 +49,10 @@ const Drawer = styled(MuiDrawer)(({ theme }) => ({
   },
 }));
 
-const LinkButton = styled(Button)(({ theme }) => ({
-  "&:hover": {
-    color: "white !important",
-    textDecoration: "none",
-    backgroundColor: theme.palette.mode === "light" ? "#001F6B" : "#272727",
-  },
-}));
-
 export const styles = {
   AppBar,
   Toolbar,
   MenuButton,
   Nav,
   Drawer,
-  LinkButton,
 };

@@ -1,52 +1,20 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 
-import { Link } from "react-router-dom";
-import { Button, useMediaQuery, Avatar, IconButton } from "@mui/material";
-import {
-  Menu,
-  Brightness7,
-  Brightness4,
-  AccountCircle,
-} from "@mui/icons-material";
+import { useMediaQuery, IconButton } from "@mui/material";
+import { Menu, Brightness7, Brightness4 } from "@mui/icons-material";
 import { styles } from "./styles";
 import { useTheme } from "@mui/system";
-import { fetchToken, craeteSessionId, moviesApi } from "../../utils";
-import { setUser, userSelector } from "../../features/auth";
+
 import { Sidebar, Search } from "..";
-import { useDispatch, useSelector } from "react-redux";
 import { ColorModeContext } from "../../utils/ToggleColorMode";
 
 const Navbar = () => {
-  const { isAuthenticated, user } = useSelector(userSelector);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { AppBar, Toolbar, MenuButton, Nav, Drawer, LinkButton } = styles;
+  const { AppBar, Toolbar, MenuButton, Nav, Drawer } = styles;
   const isMobile = useMediaQuery("(max-width:600px)");
   const theme = useTheme();
-  const dispatch = useDispatch();
 
   const colorMode = useContext(ColorModeContext);
-  const token = localStorage.getItem("request_token");
-  const sessionIdFromLocalStorage = localStorage.getItem("session_id");
-  useEffect(() => {
-    const loginUser = async () => {
-      if (token) {
-        if (sessionIdFromLocalStorage) {
-          const { data: userData } = await moviesApi.get(
-            `/account?session_id=${sessionIdFromLocalStorage}`
-          );
-          dispatch(setUser(userData));
-        } else {
-          const sessionId = await craeteSessionId();
-
-          const { data: userData } = await moviesApi.get(
-            `/account?session_id=${sessionId}`
-          );
-          dispatch(setUser(userData));
-        }
-      }
-    };
-    loginUser();
-  }, [token]);
 
   return (
     <>
@@ -70,27 +38,7 @@ const Navbar = () => {
             {theme.palette.mode === "dark" ? <Brightness7 /> : <Brightness4 />}
           </IconButton>
           {!isMobile && <Search />}
-          <div>
-            {!isAuthenticated ? (
-              <Button color="inherit" onClick={fetchToken}>
-                Login &nbsp; <AccountCircle />
-              </Button>
-            ) : (
-              <LinkButton
-                color="inherit"
-                component={Link}
-                to={`./profile/${user.id}`}
-                onClick={() => {}}
-              >
-                {!isMobile && <>My Movies &nbsp;</>}
-                <Avatar
-                  style={{ width: 30, height: 30 }}
-                  alt="Profile"
-                  src={`https://www.themoviedb.org/t/p/w64_and_h64_face${user?.avatar?.tmdb?.avatar_path}`}
-                />
-              </LinkButton>
-            )}
-          </div>
+
           {isMobile && <Search />}
         </Toolbar>
       </AppBar>
