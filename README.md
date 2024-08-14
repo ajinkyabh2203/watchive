@@ -4,7 +4,7 @@
 https://github.com/user-attachments/assets/61130687-4a40-46b4-8ea0-9ccbc62a2a58
 
 
-WatchHive is an innovative web application designed to help you explore movies effortlessly. Navigate through various genres, get detailed movie information, and discover new favorites with personalized recommendations.
+**Watchive is an innovative web application designed to help you explore movies effortlessly. Navigate through various genres, get detailed movie information, and discover new favorites with personalized recommendations.**
 
 ## Features ✨
 
@@ -24,7 +24,7 @@ WatchHive is an innovative web application designed to help you explore movies e
 
 ## Live Demo 🚀
 
-Experience WatchHive live at: [watchive.netlify.app](https://watchive.netlify.app) 
+Experience Watchive live at: [watchive.netlify.app](https://watchive.netlify.app) 
 
 ## Planned Features for V2 🔮
 
