@@ -35,10 +35,6 @@ Experience Watchive live at: [watchive.netlify.app](https://watchive.netlify.app
 
 Contributions are always welcome! Please fork the repository and submit a pull request with your changes. For bug reports or feature requests, open an issue on the [GitHub Issues](https://github.com/ajinkyabh2203/watchive/issues) page.
 
-## License 📜
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgements 🙏
 
 - [Material UI](https://mui.com/) for the component library.
