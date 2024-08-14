@@ -38,4 +38,4 @@ Contributions are always welcome! Please fork the repository and submit a pull r
 ## Acknowledgements 🙏
 
 - [Material UI](https://mui.com/) for the component library.
-- [TMDB API](https://www.themoviedb.org/documentation/api) for the movie data.
+- [TMDB API](https://developer.themoviedb.org/docs/getting-started) for the movie data.
